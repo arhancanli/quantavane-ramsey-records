@@ -1,0 +1,12 @@
+Copyright (c) 2026 Arhan Canli (Quantavane)
+
+The colourings in colourings/, records.json, check.c and README.md are licensed under the Creative Commons
+Attribution 4.0 International License (CC BY 4.0): https://creativecommons.org/licenses/by/4.0/
+
+You may share and adapt this material for any purpose, including commercially, provided you give appropriate credit
+("Arhan Canli, Quantavane"), link to the licence, and indicate whether changes were made.
+
+colourings/R8_12_K511.txt is derived from the file "R(8, 12) >= 511.txt" in
+https://github.com/google-research/google-research/tree/master/ramsey_number_bounds (Copyright Google LLC, Apache
+License 2.0, https://www.apache.org/licenses/LICENSE-2.0). Changes: one vertex added (number 510, with its 510 edges)
+and the edge {131, 356} recoloured from red (1) to blue (0); all other entries are unchanged.
