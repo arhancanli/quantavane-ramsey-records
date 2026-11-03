@@ -6,14 +6,22 @@ contains a red K_s or a blue K_t. A colouring of K_n with neither shows that R(s
 | Bound | Colouring | Previous best |
 |---|---|---|
 | R(5,15) ≥ 279 | K_278, circulant | 275, from a recursive construction (Radziszowski's survey *Small Ramsey Numbers*, revision 18) |
-| R(8,12) ≥ 512 | K_511 | 511, from a 510-vertex colouring in google-research/ramsey_number_bounds (2026) |
+| R(8,12) ≥ 519 | K_518 | 512, from our K_511 colouring of 25 Oct 2026 (below); before it 511, from a 510-vertex colouring in google-research/ramsey_number_bounds (2026) |
 
 **R(5,15) ≥ 279.** Number the vertices 0 to 277 and colour the edge {i, j} red when min(|i−j|, 278−|i−j|) is one
 of 1, 6, 8, 9, 10, 13, 41, 42, 43, 44, 45, 46, 48, 51, 54, 57, 60, 63, 66, 67, 68, 69, 70, 71, 94, 95, 96, 97, 98,
 99, 104, 107, 110, 113, 116, 118, 119, 122, 125, 126, 128, 129, 130, 131, 133, 135, 137, 139, and blue otherwise.
 There is no red K_5 and no blue K_15. It was found by a tabu search over circulant colourings.
 
-**R(8,12) ≥ 512.** This colouring extends the 510-vertex colouring `R(8, 12) >= 511.txt` from
+**R(8,12) ≥ 519.** `colourings/R8_12_K518.txt` enlarges the K_511 colouring below by copying three of its vertices.
+Vertex 102 becomes the pair 102, 511, joined in red. Vertices 356 and 458 each become four vertices (356 and 512 to
+514; 458 and 515 to 517), joined all in blue. Every other edge takes the colour of the edge between the original
+vertices, so vertices 0 to 510 keep their colours. There is no red K_8 and no blue K_12. Vertex 511 came from the same
+add-a-vertex local search as the K_511 colouring; the six blue copies came from a search for vertices whose copies
+create neither.
+
+**R(8,12) ≥ 512 (25 Oct 2026, now superseded).** `colourings/R8_12_K511.txt` extends the 510-vertex colouring
+`R(8, 12) >= 511.txt` from
 [google-research/ramsey_number_bounds](https://github.com/google-research/google-research/tree/master/ramsey_number_bounds)
 by one vertex (number 510) and recolours the edge {131, 356} from red to blue. Every other edge keeps its colour.
 There is no red K_8 and no blue K_12. It was found with the add-a-vertex-and-repair local search of Fritz Cremer
@@ -25,12 +33,13 @@ There is no red K_8 and no blue K_12. It was found with the add-a-vertex-and-rep
 cc -O2 -o check check.c
 ./check colourings/R5_15_K278.txt    # a few seconds
 ./check colourings/R8_12_K511.txt    # about two hours on a laptop
+./check colourings/R8_12_K518.txt    # a few hours on a laptop
 ```
 
 `check.c` confirms that each matrix is symmetric with a zero diagonal, then finds the largest red clique (1s) and
 the largest blue clique (0s) exactly, by branch and bound. For a circulant colouring it searches from vertex 0 only,
-since rotations preserve both colours. Expected results: R5_15_K278, red 4 and blue 14; R8_12_K511, red 7 and
-blue 11. Each colouring was also checked by at least one other, independently written program before release.
+since rotations preserve both colours. Expected results: R5_15_K278, red 4 and blue 14; R8_12_K511 and R8_12_K518,
+red 7 and blue 11. Each colouring was also checked by at least one other, independently written program before release.
 
 ## Files
 
@@ -40,8 +49,8 @@ blue 11. Each colouring was also checked by at least one other, independently wr
 
 ## Licence
 
-CC BY 4.0 (see `LICENSE`). `colourings/R8_12_K511.txt` is derived from a colouring released by Google Research
-under the Apache License 2.0, which also applies to it. Please credit "Arhan Canli, Quantavane" when you use these
-colourings.
+CC BY 4.0 (see `LICENSE`). `colourings/R8_12_K511.txt` and `colourings/R8_12_K518.txt` are derived from a colouring
+released by Google Research under the Apache License 2.0, which also applies to them. Please credit "Arhan Canli,
+Quantavane" when you use these colourings.
 
 Arhan Canli, Quantavane · quantavane.com

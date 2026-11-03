@@ -1,11 +1,4 @@
 [
-  {"s": 5, "t": 15, "lower_bound": 279, "vertices": 278, "circulant": true, "file": "colourings/R5_15_K278.txt",
-   "sha256": "489cb8320e80e04adc2b4ccfa82247fb3104a3a2674ea99561a172dfd8e54b10", "largest_red_clique": 4,
-   "largest_blue_clique": 14, "previous_lower_bound": 275,
-   "previous_source": "S. P. Radziszowski, Small Ramsey Numbers, Electron. J. Combin. DS1, revision 18 (2026)"},
-  {"s": 8, "t": 12, "lower_bound": 512, "vertices": 511, "circulant": false, "file": "colourings/R8_12_K511.txt",
-   "sha256": "95c89066141720eed4a8f79b5bfb0ddad93a0a06653d5f2966cc42c917bd6b1c", "largest_red_clique": 7,
-   "largest_blue_clique": 11, "previous_lower_bound": 511,
-   "previous_source": "google-research/ramsey_number_bounds, improved_bounds/R(8, 12) >= 511.txt",
-   "extends": "the 510-vertex colouring above, plus vertex 510; edge {131, 356} recoloured red to blue"}
+  {"s": 5, "t": 15, "lower_bound": 279, "vertices": 278, "circulant": true, "file": "colourings/R5_15_K278.txt", "sha256": "489cb8320e80e04adc2b4ccfa82247fb3104a3a2674ea99561a172dfd8e54b10", "largest_red_clique": 4, "largest_blue_clique": 14, "previous_lower_bound": 275, "previous_source": "S. P. Radziszowski, Small Ramsey Numbers, Electron. J. Combin. DS1, revision 18 (2026)"},
+  {"s": 8, "t": 12, "lower_bound": 519, "vertices": 518, "circulant": false, "file": "colourings/R8_12_K518.txt", "sha256": "d84b57685cc96c916e2a1f12f08ff9dc73c94cb25ec888bfcfa2f035f7432407", "largest_red_clique": 7, "largest_blue_clique": 11, "previous_lower_bound": 512, "previous_source": "colourings/R8_12_K511.txt in this repository (25 Oct 2026); before it 511, google-research/ramsey_number_bounds, improved_bounds/R(8, 12) >= 511.txt", "extends": "colourings/R8_12_K511.txt: vertex 102 doubled (102 and 511, joined in red); vertices 356 and 458 each copied three times (512-514 and 515-517, each group of four joined in blue); every other edge takes the colour between the original vertices", "earlier": {"lower_bound": 512, "vertices": 511, "file": "colourings/R8_12_K511.txt", "sha256": "95c89066141720eed4a8f79b5bfb0ddad93a0a06653d5f2966cc42c917bd6b1c", "previous_lower_bound": 511, "previous_source": "google-research/ramsey_number_bounds, improved_bounds/R(8, 12) >= 511.txt", "extends": "the 510-vertex colouring above, plus vertex 510; edge {131, 356} recoloured red to blue"}}
 ]
