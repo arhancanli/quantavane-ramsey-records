@@ -27,6 +27,12 @@ by one vertex (number 510) and recolours the edge {131, 356} from red to blue. E
 There is no red K_8 and no blue K_12. It was found with the add-a-vertex-and-repair local search of Fritz Cremer
 (arXiv:2610.12122).
 
+## Paper
+
+Arhan Canli, *New lower bounds for the Ramsey numbers R(5,15) and R(8,12)*, version 2 (3 November 2026),
+[doi:10.5281/zenodo.23920916](https://doi.org/10.5281/zenodo.23920916). It gives both colourings and the proof of
+R(8,12) ≥ 519 from the K_511 colouring.
+
 ## Check them yourself
 
 ```sh
