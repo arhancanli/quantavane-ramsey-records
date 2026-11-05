@@ -5,10 +5,19 @@ contains a red K_s or a blue K_t. A colouring of K_n with neither shows that R(s
 
 | Bound | Colouring | Previous best |
 |---|---|---|
-| R(5,15) ≥ 279 | K_278, circulant | 275, from a recursive construction (Radziszowski's survey *Small Ramsey Numbers*, revision 18) |
+| R(5,15) ≥ 283 | K_282, circulant | 279, from our K_278 colouring of 24 Oct 2026 (below); before it 275, from a recursive construction (Radziszowski's survey *Small Ramsey Numbers*, revision 18) |
 | R(8,12) ≥ 519 | K_518 | 512, from our K_511 colouring of 25 Oct 2026 (below); before it 511, from a 510-vertex colouring in google-research/ramsey_number_bounds (2026) |
 
-**R(5,15) ≥ 279.** Number the vertices 0 to 277 and colour the edge {i, j} red when min(|i−j|, 278−|i−j|) is one
+**R(5,15) ≥ 283.** Number the vertices 0 to 281 and colour the edge {i, j} red when min(|i−j|, 282−|i−j|) is one
+of 2, 6, 8, 9, 10, 13, 14, 21, 29, 30, 32, 33, 36, 39, 44, 45, 47, 52, 55, 61, 67, 69, 71, 72, 77, 83, 86, 89, 92,
+95, 97, 99, 108, 112, 114, 115, 117, 118, 120, 121, 124, 128, 130, 131, 132, 135, 136, 139, 141, and blue otherwise
+(`colourings/R5_15_K282.txt`). There is no red K_5 and no blue K_15. A second colouring, with distance 109 red as
+well, also works (`colourings/R5_15_K282_b.txt`); no multiplier d ↦ kd maps one to the other. Both were found on
+5 November 2026 by a tabu search over circulant colourings, started from the K_278 colouring below scaled to 282
+vertices (distance d takes the colour of distance round(278d/282)) and perturbed at random, and checked by two
+independently written programs (Bron-Kerbosch with Tomita's pivot, and the branch and bound in `check.c`).
+
+**R(5,15) ≥ 279 (24 Oct 2026, now superseded).** Number the vertices 0 to 277 and colour the edge {i, j} red when min(|i−j|, 278−|i−j|) is one
 of 1, 6, 8, 9, 10, 13, 41, 42, 43, 44, 45, 46, 48, 51, 54, 57, 60, 63, 66, 67, 68, 69, 70, 71, 94, 95, 96, 97, 98,
 99, 104, 107, 110, 113, 116, 118, 119, 122, 125, 126, 128, 129, 130, 131, 133, 135, 137, 139, and blue otherwise.
 There is no red K_5 and no blue K_15. It was found by a tabu search over circulant colourings.
@@ -37,6 +46,8 @@ R(8,12) ≥ 519 from the K_511 colouring.
 
 ```sh
 cc -O2 -o check check.c
+./check colourings/R5_15_K282.txt    # a few seconds
+./check colourings/R5_15_K282_b.txt  # a few seconds
 ./check colourings/R5_15_K278.txt    # a few seconds
 ./check colourings/R8_12_K511.txt    # about two hours on a laptop
 ./check colourings/R8_12_K518.txt    # a few hours on a laptop
@@ -44,7 +55,7 @@ cc -O2 -o check check.c
 
 `check.c` confirms that each matrix is symmetric with a zero diagonal, then finds the largest red clique (1s) and
 the largest blue clique (0s) exactly, by branch and bound. For a circulant colouring it searches from vertex 0 only,
-since rotations preserve both colours. Expected results: R5_15_K278, red 4 and blue 14; R8_12_K511 and R8_12_K518,
+since rotations preserve both colours. Expected results: R5_15_K282, R5_15_K282_b and R5_15_K278, red 4 and blue 14; R8_12_K511 and R8_12_K518,
 red 7 and blue 11. Each colouring was also checked by at least one other, independently written program before release.
 
 ## Files
