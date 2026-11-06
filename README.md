@@ -20,7 +20,9 @@ independently written programs (Bron-Kerbosch with Tomita's pivot, and the branc
 **R(5,15) ≥ 279 (24 Oct 2026, now superseded).** Number the vertices 0 to 277 and colour the edge {i, j} red when min(|i−j|, 278−|i−j|) is one
 of 1, 6, 8, 9, 10, 13, 41, 42, 43, 44, 45, 46, 48, 51, 54, 57, 60, 63, 66, 67, 68, 69, 70, 71, 94, 95, 96, 97, 98,
 99, 104, 107, 110, 113, 116, 118, 119, 122, 125, 126, 128, 129, 130, 131, 133, 135, 137, 139, and blue otherwise.
-There is no red K_5 and no blue K_15. It was found by a tabu search over circulant colourings.
+There is no red K_5 and no blue K_15. It was found by a tabu search over circulant colourings. The line of searches
+behind it started from E. Kuznetsov's cyclic (5,14)-colouring on 266 vertices (Table 2 of arXiv:1505.07186), its
+distances scaled to 276 vertices; the colourings for 276, 278 and then 282 vertices grew from there.
 
 **R(8,12) ≥ 523.** `colourings/R8_12_K522.txt` adds four vertices, numbers 518 to 521, to the K_518 colouring below,
 one at a time. Each new vertex starts as a copy of an existing one (vertex 518 as a copy of vertex 64, joined to it in
