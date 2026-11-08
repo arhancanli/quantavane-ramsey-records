@@ -5,8 +5,19 @@ contains a red K_s or a blue K_t. A colouring of K_n with neither shows that R(s
 
 | Bound | Colouring | Previous best |
 |---|---|---|
+| R(4,18) ≥ 210 | K_209 | 209, from a 208-vertex colouring in google-research/ramsey_number_bounds (2026); Radziszowski's survey *Small Ramsey Numbers*, revision 18, lists 205 |
 | R(5,15) ≥ 283 | K_282, circulant | 279, from our K_278 colouring of 24 Oct 2026 (below); before it 275, from a recursive construction (Radziszowski's survey *Small Ramsey Numbers*, revision 18) |
 | R(8,12) ≥ 523 | K_522 | 519, from our K_518 colouring of 3 Nov 2026 (below); before it 512 (our K_511 colouring of 25 Oct 2026) and 511, from a 510-vertex colouring in google-research/ramsey_number_bounds (2026) |
+
+**R(4,18) ≥ 210.** `colourings/R4_18_K209.txt` adds one vertex, number 208, to the 208-vertex colouring
+`R(4, 18) >= 209.txt` from
+[google-research/ramsey_number_bounds](https://github.com/google-research/google-research/tree/master/ramsey_number_bounds)
+(its 1s are the red edges here). An add-a-vertex-and-repair local search in the style of Fritz Cremer's
+(arXiv:2610.12122) then recoloured edges until no red K_4 and no blue K_18 was left: among vertices 0 to 207, 152
+edges changed from red to blue and 53 from blue to red (all 205 are listed in `records.json`), and every other edge
+keeps its colour. There is no red K_4 and no blue K_18. It was found on 8 November 2026 and checked on all 209
+vertices by three independently written programs: a search with greedy-colouring bounds, Bron-Kerbosch with Tomita's
+pivot, and the branch and bound in `check.c` (largest red clique 3, largest blue clique 17).
 
 **R(5,15) ≥ 283.** Number the vertices 0 to 281 and colour the edge {i, j} red when min(|i−j|, 282−|i−j|) is one
 of 2, 6, 8, 9, 10, 13, 14, 21, 29, 30, 32, 33, 36, 39, 44, 45, 47, 52, 55, 61, 67, 69, 71, 72, 77, 83, 86, 89, 92,
@@ -57,6 +68,7 @@ R(8,12) ≥ 519 from the K_511 colouring.
 
 ```sh
 cc -O2 -o check check.c
+./check colourings/R4_18_K209.txt    # a few seconds
 ./check colourings/R5_15_K282.txt    # a few seconds
 ./check colourings/R5_15_K282_b.txt  # a few seconds
 ./check colourings/R5_15_K278.txt    # a few seconds
@@ -67,7 +79,7 @@ cc -O2 -o check check.c
 
 `check.c` confirms that each matrix is symmetric with a zero diagonal, then finds the largest red clique (1s) and
 the largest blue clique (0s) exactly, by branch and bound. For a circulant colouring it searches from vertex 0 only,
-since rotations preserve both colours. Expected results: R5_15_K282, R5_15_K282_b and R5_15_K278, red 4 and blue 14; R8_12_K511, R8_12_K518 and
+since rotations preserve both colours. Expected results: R4_18_K209, red 3 and blue 17; R5_15_K282, R5_15_K282_b and R5_15_K278, red 4 and blue 14; R8_12_K511, R8_12_K518 and
 R8_12_K522, red 7 and blue 11. Each colouring was also checked by at least one other, independently written program before release.
 
 ## Files
@@ -78,8 +90,9 @@ R8_12_K522, red 7 and blue 11. Each colouring was also checked by at least one o
 
 ## Licence
 
-CC BY 4.0 (see `LICENSE`). `colourings/R8_12_K511.txt`, `colourings/R8_12_K518.txt` and `colourings/R8_12_K522.txt`
-are derived from a colouring released by Google Research under the Apache License 2.0, which also applies to them. Please credit "Arhan Canli,
-Quantavane" when you use these colourings.
+CC BY 4.0 (see `LICENSE`). `colourings/R4_18_K209.txt` is derived from a colouring released by Google Research under
+the Apache License 2.0, as are `colourings/R8_12_K511.txt`, `colourings/R8_12_K518.txt` and
+`colourings/R8_12_K522.txt` (from another of its colourings); that licence also applies to them. Please credit
+"Arhan Canli, Quantavane" when you use these colourings.
 
 Arhan Canli, Quantavane · quantavane.com
