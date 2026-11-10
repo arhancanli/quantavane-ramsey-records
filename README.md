@@ -8,6 +8,7 @@ contains a red K_s or a blue K_t. A colouring of K_n with neither shows that R(s
 | R(3,18) ≥ 101 | K_100 | 100, from a 99-vertex colouring in google-research/ramsey_number_bounds (2026), the value Radziszowski's survey *Small Ramsey Numbers*, revision 18, lists |
 | R(4,18) ≥ 211 | K_210 | 210, from our K_209 colouring of 8 Nov 2026 (below); before it 209, from a 208-vertex colouring in google-research/ramsey_number_bounds (2026); revision 18 of the survey lists 205 |
 | R(5,15) ≥ 283 | K_282, circulant | 279, from our K_278 colouring of 24 Oct 2026 (below); before it 275, from a recursive construction (Radziszowski's survey *Small Ramsey Numbers*, revision 18) |
+| R(7,16) ≥ 649 | K_648 | 629, from the same recursive construction applied to R(4,15) ≥ 158 (Radziszowski's survey *Small Ramsey Numbers*, revision 18) |
 | R(8,12) ≥ 523 | K_522 | 519, from our K_518 colouring of 3 Nov 2026 (below); before it 512 (our K_511 colouring of 25 Oct 2026) and 511, from a 510-vertex colouring in google-research/ramsey_number_bounds (2026) |
 
 **R(3,18) ≥ 101.** `colourings/R3_18_K100.txt` adds one vertex, number 99, to the 99-vertex colouring
@@ -51,6 +52,20 @@ There is no red K_5 and no blue K_15. It was found by a tabu search over circula
 behind it started from E. Kuznetsov's cyclic (5,14)-colouring on 266 vertices (Table 2 of arXiv:1505.07186), its
 distances scaled to 276 vertices; the colourings for 276, 278 and then 282 vertices grew from there.
 
+**R(7,16) ≥ 649.** `colourings/R7_16_K648.txt` is the colouring of K_648 given by the inequality
+R(2k−1, l) ≥ 4R(k, l−1) − 3 of Xu Xiaodong, Xie Zheng, G. Exoo and S. P. Radziszowski (Electron. J. Combin. 11 (2004)
+#R35; item 2.3.i of Radziszowski's survey), with k = 4 and l = 16, applied to the 162-vertex colouring
+`R(4, 15) >= 163.txt` of
+[google-research/ramsey_number_bounds](https://github.com/google-research/google-research/tree/master/ramsey_number_bounds)
+(Nagda, Raghavan and Thakurta; its 1s are the edges of a graph G with no K_4 and no independent set of 15 vertices).
+Vertex 162i + j (i = 0 to 3, j = 0 to 161) is vertex j of copy i of G. The edge between 162i₁ + j₁ and 162i₂ + j₂ is
+red when i₁ = i₂ and j₁j₂ is an edge of G; when {i₁, i₂} is {0, 1} or {2, 3} and j₁ ≠ j₂; or when one of i₁, i₂ is in
+{0, 1} and the other in {2, 3}, and j₁ = j₂ or j₁j₂ is an edge of G. Every other edge is blue. There is no red K_7
+and no blue K_16. The survey (revision 18) lists R(7,16) ≥ 629, the same inequality applied to R(4,15) ≥ 158; Google
+Research's R(4,15) ≥ 163 (October 2026) raises it to 649, which we pointed out on 5 November 2026. The colouring was
+built on 8 November 2026 and checked on all 648 vertices by two independently written programs (Bron-Kerbosch with
+Tomita's pivot, and the branch and bound in `check.c`): largest red clique 6, largest blue clique 15.
+
 **R(8,12) ≥ 523.** `colourings/R8_12_K522.txt` adds four vertices, numbers 518 to 521, to the K_518 colouring below,
 one at a time. Each new vertex starts as a copy of an existing one (vertex 518 as a copy of vertex 64, joined to it in
 red), and Fritz Cremer's local search (arXiv:2610.12122) then recolours edges until no red K_8 and no blue K_12 is
@@ -90,6 +105,7 @@ cc -O2 -o check check.c
 ./check colourings/R5_15_K282.txt    # a few seconds
 ./check colourings/R5_15_K282_b.txt  # a few seconds
 ./check colourings/R5_15_K278.txt    # a few seconds
+./check colourings/R7_16_K648.txt    # about an hour on a laptop
 ./check colourings/R8_12_K511.txt    # about two hours on a laptop
 ./check colourings/R8_12_K518.txt    # a few hours on a laptop
 ./check colourings/R8_12_K522.txt    # an hour or two on a laptop
@@ -97,7 +113,7 @@ cc -O2 -o check check.c
 
 `check.c` confirms that each matrix is symmetric with a zero diagonal, then finds the largest red clique (1s) and
 the largest blue clique (0s) exactly, by branch and bound. For a circulant colouring it searches from vertex 0 only,
-since rotations preserve both colours. Expected results: R3_18_K100, red 2 and blue 17; R4_18_K210 and R4_18_K209, red 3 and blue 17; R5_15_K282, R5_15_K282_b and R5_15_K278, red 4 and blue 14; R8_12_K511, R8_12_K518 and
+since rotations preserve both colours. Expected results: R3_18_K100, red 2 and blue 17; R4_18_K210 and R4_18_K209, red 3 and blue 17; R5_15_K282, R5_15_K282_b and R5_15_K278, red 4 and blue 14; R7_16_K648, red 6 and blue 15; R8_12_K511, R8_12_K518 and
 R8_12_K522, red 7 and blue 11. Each colouring was also checked by at least one other, independently written program before release.
 
 ## Files
@@ -108,8 +124,8 @@ R8_12_K522, red 7 and blue 11. Each colouring was also checked by at least one o
 
 ## Licence
 
-CC BY 4.0 (see `LICENSE`). `colourings/R3_18_K100.txt`, `colourings/R4_18_K209.txt` and `colourings/R4_18_K210.txt`
-are derived from colourings released by Google Research under the Apache License 2.0, as are `colourings/R8_12_K511.txt`, `colourings/R8_12_K518.txt` and
+CC BY 4.0 (see `LICENSE`). `colourings/R3_18_K100.txt`, `colourings/R4_18_K209.txt`, `colourings/R4_18_K210.txt` and
+`colourings/R7_16_K648.txt` are derived from colourings released by Google Research under the Apache License 2.0, as are `colourings/R8_12_K511.txt`, `colourings/R8_12_K518.txt` and
 `colourings/R8_12_K522.txt` (from another of its colourings); that licence also applies to them. Please credit
 "Arhan Canli, Quantavane" when you use these colourings.
 
