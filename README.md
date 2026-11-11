@@ -122,6 +122,33 @@ R8_12_K522, red 7 and blue 11. Each colouring was also checked by at least one o
 - `records.json`: the table above in machine-readable form.
 - `check.c`: the checker.
 
+## How to cite
+
+Cite this repository for the colourings. The paper gives R(5,15) ≥ 279 and R(8,12) ≥ 519 and how they were found;
+every later bound in the table above is in this repository only. For the table of known bounds, cite Radziszowski's
+dynamic survey *Small Ramsey Numbers*.
+
+```bibtex
+@misc{quantavane-ramsey-records,
+  author       = {Canli, Arhan},
+  title        = {Ramsey number lower bounds from Quantavane: colourings and an exact checker},
+  year         = {2026},
+  howpublished = {\url{https://github.com/arhancanli/quantavane-ramsey-records}},
+  note         = {Quantavane; CC BY 4.0, with the Apache License 2.0 for the colourings named under Licence}
+}
+
+@misc{canli-ramsey-r515-r812,
+  author    = {Canli, Arhan},
+  title     = {New lower bounds for the Ramsey numbers {R}(5,15) and {R}(8,12)},
+  year      = {2026},
+  publisher = {Zenodo},
+  doi       = {10.5281/zenodo.23857056},
+  note      = {Preprint; this DOI resolves to the latest version}
+}
+```
+
+[CITATION.cff](CITATION.cff) gives the repository reference for GitHub's "Cite this repository" button.
+
 ## Licence
 
 CC BY 4.0 (see `LICENSE`). `colourings/R3_18_K100.txt`, `colourings/R4_18_K209.txt`, `colourings/R4_18_K210.txt` and

@@ -1,0 +1,27 @@
+cff-version: 1.2.0
+message: "If you use these results, please cite them as below, and credit the table that lists them."
+type: dataset
+title: "Ramsey number lower bounds from Quantavane: colourings and an exact checker"
+abstract: "Two-colourings of complete graphs that give new lower bounds on Ramsey numbers R(s,t), each checked by independently written programs, with the checker check.c."
+authors:
+  - family-names: Canli
+    given-names: Arhan
+    affiliation: Quantavane
+    email: arhan@quantavane.com
+license:
+  - CC-BY-4.0
+  - Apache-2.0
+url: "https://quantavane.com"
+repository-code: "https://github.com/arhancanli/quantavane-ramsey-records"
+keywords:
+  - Ramsey numbers
+  - graph colourings
+  - exact verification
+references:
+  - type: article
+    title: "New lower bounds for the Ramsey numbers R(5,15) and R(8,12)"
+    authors:
+      - family-names: Canli
+        given-names: Arhan
+    year: 2026
+    doi: 10.5281/zenodo.23857056
