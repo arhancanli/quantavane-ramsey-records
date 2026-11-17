@@ -8,7 +8,7 @@ contains a red K_s or a blue K_t. A colouring of K_n with neither shows that R(s
 | R(3,18) ≥ 101 | K_100 | 100, from a 99-vertex colouring in google-research/ramsey_number_bounds (2026), the value Radziszowski's survey *Small Ramsey Numbers*, revision 18, lists |
 | R(4,18) ≥ 211 | K_210 | 210, from our K_209 colouring of 8 Nov 2026 (below); before it 209, from a 208-vertex colouring in google-research/ramsey_number_bounds (2026); revision 18 of the survey lists 205 |
 | R(5,15) ≥ 283 | K_282, circulant | 279, from our K_278 colouring of 24 Oct 2026 (below); before it 275, from a recursive construction (Radziszowski's survey *Small Ramsey Numbers*, revision 18) |
-| R(7,16) ≥ 649 | K_648 | 629, from the same recursive construction applied to R(4,15) ≥ 158 (Radziszowski's survey *Small Ramsey Numbers*, revision 18) |
+| R(7,16) ≥ 649 (superseded: ≥ 708, B. Jang 2026) | K_648 | 629, from the same recursive construction applied to R(4,15) ≥ 158 (Radziszowski's survey *Small Ramsey Numbers*, revision 18) |
 | R(8,12) ≥ 523 | K_522 | 519, from our K_518 colouring of 3 Nov 2026 (below); before it 512 (our K_511 colouring of 25 Oct 2026) and 511, from a 510-vertex colouring in google-research/ramsey_number_bounds (2026) |
 
 **R(3,18) ≥ 101.** `colourings/R3_18_K100.txt` adds one vertex, number 99, to the 99-vertex colouring
@@ -52,7 +52,7 @@ There is no red K_5 and no blue K_15. It was found by a tabu search over circula
 behind it started from E. Kuznetsov's cyclic (5,14)-colouring on 266 vertices (Table 2 of arXiv:1505.07186), its
 distances scaled to 276 vertices; the colourings for 276, 278 and then 282 vertices grew from there.
 
-**R(7,16) ≥ 649.** `colourings/R7_16_K648.txt` is the colouring of K_648 given by the inequality
+**R(7,16) ≥ 649.** *Correction, 17 Nov 2026: this is no longer the best value and the colouring was not the first published one. B. Jang published a colouring of K_648 on 9 November 2026 (github.com/8rulerstar/ramsey-r7-16) and has since shown R(7,16) ≥ 708 (Zenodo 10.5281/zenodo.24149479, 12 November 2026); the credit for both is his.* `colourings/R7_16_K648.txt` is the colouring of K_648 given by the inequality
 R(2k−1, l) ≥ 4R(k, l−1) − 3 of Xu Xiaodong, Xie Zheng, G. Exoo and S. P. Radziszowski (Electron. J. Combin. 11 (2004)
 #R35; item 2.3.i of Radziszowski's survey), with k = 4 and l = 16, applied to the 162-vertex colouring
 `R(4, 15) >= 163.txt` of
