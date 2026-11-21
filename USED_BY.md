@@ -1,0 +1,12 @@
+# Used by
+
+Known uses of this repository by other people: tables that list its results, papers and deposits that cite it, and repositories that build on it. Each entry links to the public document. Promises and private correspondence are not listed. Last checked: 21 November 2026.
+
+## Uses
+
+- **Leaps in Bounds** ([daniel-munro/leaps-in-bounds](https://github.com/daniel-munro/leaps-in-bounds)), kept by Daniel Munro: [pull request #50](https://github.com/daniel-munro/leaps-in-bounds/pull/50), merged on 9 November 2026, lists R(5,15) ≥ 283 and R(8,12) ≥ 523 with the colourings and the checker of this repository.
+- Advatiya Thalluri, *Lean 4 kernel checks of three published combinatorial constructions: kissing configurations in dimension 32, a Ramsey colouring for R(5,15), and nine constant-weight codes*, Zenodo, 3 November 2026, [doi:10.5281/zenodo.23920168](https://doi.org/10.5281/zenodo.23920168): checks the R(5,15) ≥ 279 colouring of this repository (commit 21ede2c) in the Lean kernel.
+
+## Add yours
+
+If you use these results, data or programs in a paper, a table, a dataset or a program, please open an issue or a pull request with a link, and it will be listed here. The reference to use is in [README.md](README.md#how-to-cite) and [CITATION.cff](CITATION.cff).

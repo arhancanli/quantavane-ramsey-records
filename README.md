@@ -149,6 +149,9 @@ dynamic survey *Small Ramsey Numbers*.
 
 [CITATION.cff](CITATION.cff) gives the repository reference for GitHub's "Cite this repository" button.
 
+Known uses of this work are listed in [USED_BY.md](USED_BY.md). If you use it, please open an issue or a pull request
+with a link so that yours can be added.
+
 ## Licence
 
 CC BY 4.0 (see `LICENSE`). `colourings/R3_18_K100.txt`, `colourings/R4_18_K209.txt`, `colourings/R4_18_K210.txt` and
